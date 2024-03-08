@@ -10,8 +10,7 @@ use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
-use Encore\Admin\Tree;
-use Encore\Admin\Layout\Content;
+
 
 class CourseController extends AdminController
 {
@@ -68,9 +67,9 @@ class CourseController extends AdminController
         $form->text('name', __('Name'));
         $result = CourseType::pluck('title', 'id');
         $form->select('type_id', __('Category'))->options($result);
+        
         $form->image('thumbnail', __('Thumbnail'))->uniqueName();
         $form->file('video', __('Video'))->uniqueName();
-        $form->text('title', __('Title'));
         $form->text('description', __('Description'));
         $form->decimal('price', __('Price'));
         $form->number('lesson_num', __('Lesson number'));
