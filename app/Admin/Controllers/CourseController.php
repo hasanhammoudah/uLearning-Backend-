@@ -33,6 +33,8 @@ class CourseController extends AdminController
         $grid->column('price', __('Price'));
         $grid->column('lesson_num', __('Lesson num'));
         $grid->column('video_length', __('Video length'));
+        $grid->column('downloadedable_res', __('Resources num'));
+
 
         $grid->column('created_at', __('Created at'));
 
@@ -67,7 +69,8 @@ class CourseController extends AdminController
         $form->text('name', __('Name'));
         $result = CourseType::pluck('title', 'id');
         $form->select('type_id', __('Category'))->options($result);
-        
+        $form->number('downloadedable_res', __('Resources num'));
+
         $form->image('thumbnail', __('Thumbnail'))->uniqueName();
         $form->file('video', __('Video'))->uniqueName();
         $form->text('description', __('Description'));

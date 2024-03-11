@@ -14,13 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::group(['namespace'=>'Api'], function(){
-
-    //Route::post('/login', [UserController::class, 'login']);
     Route::post('/login', 'UserController@login');
-    
     Route::group(['middleware'=>'auth:sanctum'], function(){
         Route::any('/courseList', 'CourseController@courseList');
-       // Route::any('/courseList', [CourseController::class, 'courseList']);
+       Route::any('/courseDetail','CourseController@courseDetail');
+       Route::any('/checkout','PayController@checkout');
+
     });
 });
 
