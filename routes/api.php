@@ -19,8 +19,10 @@ Route::group(['namespace'=>'Api'], function(){
         Route::any('/courseList', 'CourseController@courseList');
        Route::any('/courseDetail','CourseController@courseDetail');
        Route::any('/checkout','PayController@checkout');
-
     });
+    // https://3148-2a01-9700-158e-b500-5c3d-cb5d-10bd-cfcf.ngrok-free.app/
+    Route::any('/web_go_hooks','PayController@web_go_hooks');
+
 });
 
 
