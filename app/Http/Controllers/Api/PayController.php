@@ -96,7 +96,7 @@ public function web_go_hooks()
 {
    // Log::info("11211-------");
    Stripe::setApiKey(ENV('STRIPE_SECRET_KEY'));
-   $endpoint_secret = 'whsec_BqCVe3n5n1BcSt9WJ8UruirS3KytAHOD';
+   $endpointSecret = env('ENDPOINT_SECRET');
     $payload = @file_get_contents('php://input');
     $sig_header = $_SERVER['HTTP_STRIPE_SIGNATURE'];
     $event = null;
@@ -106,7 +106,7 @@ public function web_go_hooks()
         $event = \Stripe\Webhook::constructEvent(
             $payload,
             $sig_header,
-            $endpoint_secret
+            $endpointSecret
         );
     } catch (\UnexpectedValueException $e) {
         // Invalid payload

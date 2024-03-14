@@ -1,5 +1,6 @@
 <?php
 
+use App\Admin\Controllers\LessonController;
 use App\Admin\Controllers\OrderController;
 use Illuminate\Routing\Router;
 
@@ -17,5 +18,7 @@ Route::group([
     $router->resource('/course-types', CourseTypeController::class);
     $router->resource('/courses', CourseController::class);
     $router->resource('/orders', OrderController::class);
+    $router->resource('/lessons', LessonController::class);
+
 
 });
