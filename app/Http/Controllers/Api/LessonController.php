@@ -33,7 +33,7 @@ class LessonController extends Controller
             $result = Lesson::where('id','=',$lessonId)->select('id','video')->first();
             return response()->json([
           'code'=>200,
-          'data'=>$result,
+          'data'=>$result->video,
           'msg'=>"success",
             ],200);
         } catch (\Throwable $th) {
