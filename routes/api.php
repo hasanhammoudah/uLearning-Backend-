@@ -21,6 +21,10 @@ Route::group(['namespace'=>'Api'], function(){
        Route::any('/checkout','PayController@checkout');
        Route::any('/lessonList','LessonController@lessonList');
        Route::any('/lessonDetail','LessonController@lessonDetail');
+       Route::any('/coursesBought','CourseController@coursesBought');
+       Route::any('/orderList','CourseController@orderList');
+
+
 
 
     });
